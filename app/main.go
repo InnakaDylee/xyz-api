@@ -2,6 +2,7 @@ package main
 
 import (
 	"xyz/app/router"
+	"xyz/middlewares"
 	configs "xyz/packages/databases/config"
 	"xyz/packages/databases/database"
 
@@ -21,9 +22,13 @@ func main() {
 
 	// Initialize MySQL connection
 	db := database.ConnectMySQL(e)
-	if db == nil {
-		e.Logger.Fatalf("failed to connect to MySQL database")
-	}
+
+	// Setup middlewares
+	middlewares.CORS(e)
+	middlewares.Recover(e)
+	middlewares.Logger(e)
+	middlewares.RateLimiter(e)
+	middlewares.RemoveTrailingSlash(e)
 
 	// Setup Router
 	router.SetupRouter(e, db)
@@ -39,7 +44,7 @@ func main() {
 	address := host + ":" + port
 	// Check if the address is empty
 	if address == "" {
-		address = "localhost:8080" // Default to localhost:8080 if not set
+		address = "localhost:8080" // Default to localhost::8080 if not set
 	}
 	
 	// Print the server address
