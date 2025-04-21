@@ -16,7 +16,6 @@ func ConnectMySQL(e *echo.Echo) *gorm.DB {
 		e.Logger.Fatalf("failed to load configuration: %v", err)
 	}
 	// Initialize MySQL connection
-
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		config.MYSQL.MYSQL_USER,
 		config.MYSQL.MYSQL_PASS,
@@ -29,6 +28,8 @@ func ConnectMySQL(e *echo.Echo) *gorm.DB {
 	if err != nil {
 		log.Fatalf("failed to connect MySQL: %v", err)
 	}
+
+	AutoMigration(db)
 
 	return db
 }
