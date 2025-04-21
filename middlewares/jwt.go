@@ -1,12 +1,31 @@
 package middlewares
 
 import (
+	"errors"
+	"fmt"
 	"log"
+	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	jwt "github.com/golang-jwt/jwt/v4"
+	"github.com/labstack/echo/v4"
 )
+
+func JWTMiddleware() echo.MiddlewareFunc {
+	return func(next echo.HandlerFunc) echo.HandlerFunc {
+		return func(c echo.Context) error {
+			id, email, err := ExtractToken(c)
+			if err != nil {
+				return c.JSON(http.StatusUnauthorized, echo.Map{"error": err.Error()})
+			}
+			c.Set("id", id)
+			c.Set("email", email)
+			return next(c)
+		}
+	}
+}
 
 func GenerateAuthToken(id int, email string) (string, error) {
 	log.Printf("Generate Token: ID: %d, Email: %s", id, email)
@@ -29,6 +48,42 @@ func GenerateActivateToken(email string) (string, error) {
 	}
 	token, err := jwt.NewWithClaims(jwt.SigningMethodHS256, claims).SignedString([]byte(os.Getenv("JWT_SECRET")))
 	return token, err
+}
+
+func ExtractToken(c echo.Context) (int, string, error) {
+	tokenString := c.Request().Header.Get("Authorization")
+	if tokenString == "" {
+		return 0, "", errors.New("missing authorization token")
+	}
+
+	tokenString = strings.TrimPrefix(tokenString, "Bearer ")
+	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+		return []byte(os.Getenv("JWT_SECRET")), nil
+	})
+
+	if err != nil || !token.Valid {
+		return 0, "", errors.New("invalid authorization token")
+	}
+
+	claims, ok := token.Claims.(jwt.MapClaims)
+	if !ok {
+		return 0, "", errors.New("invalid authorization token")
+	}
+
+	idFloat, idOk := claims["id"].(float64)
+	email, emailOk := claims["email"].(string)
+
+	if !idOk || !emailOk {
+		return 0, "", errors.New("invalid token claims")
+	}
+
+	id := int(idFloat)
+
+	fmt.Println("ID:", id)
+	fmt.Println("email:", email)
+
+
+	return id, email, nil
 }
 
 func ExtractTokenEmail(tokenString string) (string, error) {
@@ -83,3 +138,4 @@ func IsTokenExpired(tokenString string) (bool, error) {
 
 	return time.Unix(int64(exp), 0).Before(time.Now()), nil
 }
+
