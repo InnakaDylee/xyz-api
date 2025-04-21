@@ -4,6 +4,7 @@ import (
 	user "xyz/modules/user/router"
 	consumer "xyz/modules/consumer/router"
 	limit "xyz/modules/limit/router"
+	transaction "xyz/modules/transaction/router"
 
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
@@ -18,6 +19,9 @@ func SetupRouter(e *echo.Echo, db *gorm.DB){
 
 	limitGroup := e.Group("/api/v1/limit")
 	limit.LimitRouter(limitGroup, db)
+
+	transactionGroup := e.Group("/api/v1/transaction")
+	transaction.TransactionRouter(transactionGroup, db)
 	
 	userGroup.GET("/all", func(c echo.Context) error {
 		return c.String(200, "Hello, World!")

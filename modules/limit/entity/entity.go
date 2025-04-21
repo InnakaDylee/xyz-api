@@ -12,7 +12,7 @@ type Limit struct {
 	ID              string `json:"id"`
 	LimitAmount     int    `json:"limit_amount"`
 	Tenor           int    `json:"tenor"`
-	ConsumerID      string `json:"consumer_id"`
+	ConsumerID      string `json:"consumer_id" gorm:"size:191"`
 	Consumer        entity.Consumer
 	RemainingAmount int    `json:"remaining_amount"`
 	CreatedAt       time.Time
