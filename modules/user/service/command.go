@@ -2,7 +2,6 @@ package service
 
 import (
 	"errors"
-	"fmt"
 	"xyz/middlewares"
 	"xyz/modules/user/domain"
 	"xyz/modules/user/repository"
@@ -30,7 +29,6 @@ func (s *userCService) Login(username, password string) (domain.User, string, er
 	if validateEmpty != nil {
 		return domain.User{}, "", validateEmpty
 	}
-	fmt.Println(password)
 	
 	user, err := s.userQueryRepository.GetUserByUsername(username)
 	if err != nil {
@@ -55,7 +53,6 @@ func (s *userCService) Login(username, password string) (domain.User, string, er
 }
 
 func (s *userCService) Register(user domain.User) (domain.User, error) {
-	fmt.Println(user.Password)
 	validateEmpty := validator.CheckEmpty(user.Username, user.Password, user.Email)
 	if validateEmpty != nil {
 		return domain.User{}, validateEmpty

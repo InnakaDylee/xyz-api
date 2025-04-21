@@ -1,6 +1,11 @@
 package entity
 
-import "github.com/google/uuid"
+import (
+	"time"
+
+	"github.com/google/uuid"
+	"gorm.io/gorm"
+)
 
 type Consumer struct {
 	ID        string    `json:"id" gorm:"primaryKey"`
@@ -13,12 +18,11 @@ type Consumer struct {
 	Salary    int    `json:"salary" gorm:"not null"`
 	Photo_KTP string `json:"photo_ktp" gorm:"not null"`
 	Photo_Selfie string `json:"photo_selfie" gorm:"not null"`
-	Is_Verified bool   `json:"is_verified" gorm:"default:false"`
-	CreatedAt string `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt string `json:"updated_at" gorm:"autoUpdateTime"`
+	CreatedAt time.Time 
+	UpdatedAt time.Time 
 }
 
-func (c *Consumer) BeforeCreate() (err error) {
+func (c *Consumer) BeforeCreate(*gorm.DB) (err error) {
 	c.ID = uuid.New().String()
 	return
 }

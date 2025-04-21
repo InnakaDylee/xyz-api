@@ -20,6 +20,9 @@ func main() {
 	// Initialize Echo
 	e := echo.New()
 
+	// Set up static file serving
+	e.Static("/storages/images", "storages/images")
+
 	// Initialize MySQL connection
 	db := database.ConnectMySQL(e)
 
@@ -29,6 +32,8 @@ func main() {
 	middlewares.Logger(e)
 	middlewares.RateLimiter(e)
 	middlewares.RemoveTrailingSlash(e)
+
+	e.Debug = true
 
 	// Setup Router
 	router.SetupRouter(e, db)
