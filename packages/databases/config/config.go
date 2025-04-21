@@ -11,7 +11,6 @@ type Configuration struct {
 	POSTGRESQL    PostgreSQLConfig
 	MYSQL         MySQLConfig
 	SERVER        ServerConfig
-	SMTP   		  SMTPConfig
 }
 
 type (
@@ -33,12 +32,6 @@ type (
 		SERVER_HOST string
 		SERVER_PORT string
 	}
-	SMTPConfig struct {
-		SMTP_SERVER string
-		SMTP_PORT   string
-		SMTP_USERNAME string
-		SMTP_PASSWORD string
-	}
 )
 
 func LoadConfig() (*Configuration, error) {
@@ -47,10 +40,10 @@ func LoadConfig() (*Configuration, error) {
 	if err == nil {
 		err := godotenv.Load()
 		if err != nil {
-			return nil, fmt.Errorf("error loading .env file: %v", err)
+			return nil, fmt.Errorf("failed to load environment variables from .env file: %w", err)
 		}
 	} else {
-		fmt.Println(".env file not found, using default values")
+		fmt.Println("warning: .env file not found. make sure environment variables are set")
 	}
 
 	return &Configuration{
@@ -71,12 +64,6 @@ func LoadConfig() (*Configuration, error) {
 		SERVER: ServerConfig{
 			SERVER_HOST: os.Getenv("SERVER_HOST"),
 			SERVER_PORT: os.Getenv("SERVER_PORT"),
-		},
-		SMTP: SMTPConfig{
-			SMTP_SERVER: os.Getenv("SMTP_HOST"),
-			SMTP_PORT:   os.Getenv("SMTP_PORT"),
-			SMTP_USERNAME: os.Getenv("SMTP_USER"),
-			SMTP_PASSWORD: os.Getenv("SMTP_PASSWORD"),
 		},
 	}, nil
 }
