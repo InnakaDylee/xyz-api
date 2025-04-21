@@ -5,6 +5,7 @@ import (
 	"xyz/middlewares"
 	configs "xyz/packages/databases/config"
 	"xyz/packages/databases/database"
+	"xyz/storages/seed"
 
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
@@ -25,6 +26,7 @@ func main() {
 
 	// Initialize MySQL connection
 	db := database.ConnectMySQL(e)
+	seed.MigrateAndSeedProduct(db)
 
 	// Setup middlewares
 	middlewares.CORS(e)
