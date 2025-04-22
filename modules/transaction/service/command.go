@@ -25,12 +25,10 @@ func NewTransactionCommandService(transactionCommandRepository repository.Transa
 }
 
 func (s *TransactionCommandService) CreateTransaction(transactionInput domain.Transaction) (domain.Transaction, error) {
-	fmt.Printf("transaction input, ConsumerID: %v, ProductID: %v, LimitID: %v, OTR: %v, AssetName: %v ",  transactionInput.ConsumerID, transactionInput.ProductID, transactionInput.LimitID, transactionInput.OTR, transactionInput.AssetName)
 	validateEmpty := validator.CheckEmpty( transactionInput.ConsumerID, transactionInput.ProductID, transactionInput.LimitID, transactionInput.OTR, transactionInput.AssetName)
 	if validateEmpty != nil {
 		return domain.Transaction{}, validateEmpty
 	}
-	fmt.Println("masuk create transaction service 1")
 	limit, _ := s.limitQueryRepository.GetLimitById(transactionInput.LimitID)
 	if limit.ID == "" {
 		return domain.Transaction{}, errors.New("limit not found")
@@ -43,11 +41,11 @@ func (s *TransactionCommandService) CreateTransaction(transactionInput domain.Tr
 		return domain.Transaction{}, errors.New("remaining amount is not enough")
 	}
 
-
-	// limit, err := s.limitCommandRepository.UpdateLimit(limit)
-	// if err != nil {
-	// 	return domain.Transaction{}, err
-	// }
+	limit, err := s.limitCommandRepository.UpdateLimit(limit)
+	if err != nil {
+		return domain.Transaction{}, err
+	}
+	
 
 	transactionInput.Limit = limit
 	transactionInput.Status = "unpaid"
@@ -66,6 +64,7 @@ func (s *TransactionCommandService) CreateTransaction(transactionInput domain.Tr
 	if err != nil {
 		return domain.Transaction{}, err
 	}
+	fmt.Println(transaction)
 
 	return transaction, nil
 }

@@ -22,6 +22,7 @@ type TransactionResponse struct {
 	Status             string  `json:"status"`
 	AmountUsed         float64 `json:"amount_used"`
 	LimitID            string  `json:"limit_id"`
+	LimitTenor         int     `json:"limit_tenor"`
 	ProductID          int     `json:"product_id"`
 	CreatedAt          string  `json:"created_at"`
 	UpdatedAt          string  `json:"updated_at"`
@@ -50,6 +51,7 @@ func TransactionDomainIntoResponse(transaction domain.Transaction) TransactionRe
 		Status:             transaction.Status,
 		AmountUsed:         transaction.AmountUsed,
 		LimitID:            transaction.LimitID,
+		LimitTenor:         transaction.Limit.Tenor,
 		ProductID:          transaction.ProductID,
 		CreatedAt:          transaction.CreatedAt.Format("2006-01-02 15:04:05"),
 		UpdatedAt:          transaction.UpdatedAt.Format("2006-01-02 15:04:05"),

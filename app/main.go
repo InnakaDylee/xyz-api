@@ -5,7 +5,10 @@ import (
 	"xyz/middlewares"
 	configs "xyz/packages/databases/config"
 	"xyz/packages/databases/database"
+	"xyz/packages/util"
 	"xyz/storages/seed"
+	"xyz/modules/installment/repository"
+	userRepository "xyz/modules/user/repository"
 
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
@@ -36,6 +39,14 @@ func main() {
 	middlewares.RemoveTrailingSlash(e)
 
 	e.Debug = true
+	// Setup Cron jobs
+	installmentRepo := repository.NewInstallmentQueryRepository(db)
+	userRepo := userRepository.NewUserQueryRepository(db)
+	cronService := &util.CronService{
+		InstallmentRepo: installmentRepo,
+		UserRepo:        userRepo,
+	}
+	cronService.Start()
 
 	// Setup Router
 	router.SetupRouter(e, db)

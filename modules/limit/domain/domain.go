@@ -34,6 +34,18 @@ func LimitDomainIntoEntity(limit Limit) entity.Limit {
 	}
 }
 
+func LimitDomainIntoEntityWithLimitID(limit Limit) entity.Limit {
+	return entity.Limit{
+		ID:             limit.ID,
+		LimitAmount:    limit.LimitAmount,
+		Tenor:          limit.Tenor,
+		ConsumerID:     limit.ConsumerID,
+		RemainingAmount: limit.RemainingAmount,
+		CreatedAt:      limit.CreatedAt,
+		UpdatedAt:      limit.UpdatedAt,
+	}
+}
+
 func LimitEntityIntoDomain(limit entity.Limit) Limit {
 	return Limit{
 		ID:             limit.ID,

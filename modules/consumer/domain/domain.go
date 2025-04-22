@@ -3,11 +3,13 @@ package domain
 import (
 	"time"
 	"xyz/modules/consumer/entity"
+	"xyz/modules/user/domain"
 )
 
 type Consumer struct{
 	ID string
 	User_ID int
+	User domain.User
 	NIK string
 	Full_Name string
 	Legal_Name string
