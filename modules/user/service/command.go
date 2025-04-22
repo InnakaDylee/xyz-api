@@ -68,12 +68,12 @@ func (s *userCService) Register(user domain.User) (domain.User, error) {
 
 	_, err := s.userQueryRepository.GetUserByUsername(user.Username)
 	if err == nil {
-		return domain.User{}, errors.New("email already registered")
+		return domain.User{}, errors.New("username already registered")
 	}
 
 	_, err = s.userQueryRepository.GetUserByEmail(user.Email)
 	if err == nil {
-		return domain.User{}, errors.New("username already registered")
+		return domain.User{}, errors.New("email already registered")
 	}
 
 	HashPassword, err := bcrypt.HashPassword(user.Password)

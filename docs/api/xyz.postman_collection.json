@@ -1,0 +1,1308 @@
+{
+	"info": {
+		"_postman_id": "3c61c6a0-2fa5-4a0f-a298-e9f94b194584",
+		"name": "xyz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28965200"
+	},
+	"item": [
+		{
+			"name": "Auth User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "testing1231",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "innakadylee@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testing1231",
+									"type": "text"
+								},
+								{
+									"key": "nik",
+									"value": "1234567891123454",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "jhon doe",
+									"type": "text"
+								},
+								{
+									"key": "legal_name",
+									"value": "jhon doe",
+									"type": "text"
+								},
+								{
+									"key": "place_of_birth",
+									"value": "Bandung",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": "01-01-2025",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "10000000",
+									"type": "text"
+								},
+								{
+									"key": "photo_ktp",
+									"type": "file",
+									"src": "/Users/a62821/Downloads/ktpbre.jpeg"
+								},
+								{
+									"key": "photo_selfie",
+									"type": "file",
+									"src": "/Users/a62821/Downloads/selfie.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "testing1231",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "innakadyleexd@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "testing1231",
+											"type": "text"
+										},
+										{
+											"key": "nik",
+											"value": "1234567891123456",
+											"type": "text"
+										},
+										{
+											"key": "full_name",
+											"value": "jhon doe",
+											"type": "text"
+										},
+										{
+											"key": "legal_name",
+											"value": "jhon doe",
+											"type": "text"
+										},
+										{
+											"key": "place_of_birth",
+											"value": "Bandung",
+											"type": "text"
+										},
+										{
+											"key": "date_of_birth",
+											"value": "01-01-2025",
+											"type": "text"
+										},
+										{
+											"key": "salary",
+											"value": "10000000",
+											"type": "text"
+										},
+										{
+											"key": "photo_ktp",
+											"type": "file",
+											"src": "/Users/a62821/Downloads/ktpbre.jpeg"
+										},
+										{
+											"key": "photo_selfie",
+											"type": "file",
+											"src": "/Users/a62821/Downloads/selfie.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/api/v1/user/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 02:38:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"User registered successfully\"\n    },\n    \"results\": {\n        \"user_id\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "testing1234",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testing1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "testing1234",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "testing1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/api/v1/user/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 18:02:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "313"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Login successful\"\n    },\n    \"results\": {\n        \"user_id\": 5,\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzQ0OTQwLCJpZCI6NX0.LNnhqJmLFcd8BbC2Y7VgdzsUbrsWXK4VCN_38MjqxuI\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Request Activation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "innakadylee@upi.edu",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/user/request-activation",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"request-activation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Request Activation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "innakadylee@upi.edu",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/api/v1/user/request-activation",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"request-activation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 21:26:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Activation email sent successfully\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Activate User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/user/activate?token=",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"activate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Activate User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/user/activate?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlubmFrYWR5bGVlQHVwaS5lZHUiLCJleHAiOjE3NDUwOTgyNjB9.N5Ednm_-BnG3l_VpwhjM6BD7xQ4UBfuUhjUf6wRHsnU",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"activate"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlubmFrYWR5bGVlQHVwaS5lZHUiLCJleHAiOjE3NDUwOTgyNjB9.N5Ednm_-BnG3l_VpwhjM6BD7xQ4UBfuUhjUf6wRHsnU"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 21:21:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"User activated successfully\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Consumer",
+			"item": [
+				{
+					"name": "Get Consumer Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzI1MjY2LCJpZCI6NX0.eaEsK5AWwaNBTRuIzpfzwLHP3xr3ynX9LJtNAUf4IOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/consumer/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"consumer",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Consumer Data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/v1/consumer/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"consumer",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 02:35:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "551"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Consumer found\"\n    },\n    \"results\": {\n        \"id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n        \"user_id\": 5,\n        \"nik\": \"1234567891123456\",\n        \"full_name\": \"jhon doe\",\n        \"legal_name\": \"jhon doe\",\n        \"place_of_birth\": \"Bandung\",\n        \"date_of_birth\": \"01-01-2025\",\n        \"salary\": 10000000,\n        \"photo_ktp\": \"storages/images/8Bpibdx6lT_ktpbre.jpeg\",\n        \"photo_selfie\": \"storages/images/urDFgphxfw_selfie.jpeg\",\n        \"created_at\": \"2025-04-20 15:35:36\",\n        \"updated_at\": \"2025-04-20 15:35:36\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Limit",
+			"item": [
+				{
+					"name": "Get Limit Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MjcxNDczLCJpZCI6NX0.-cF_cqtwzLP_13XWDCoKF0SmxDbpUCvcSRnYWiqdXBg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/limit/233bbda6-a87a-4bbf-8fbd-d39ca05c79da",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"limit",
+								"233bbda6-a87a-4bbf-8fbd-d39ca05c79da"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Limit Detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/v1/limit/233bbda6-a87a-4bbf-8fbd-d39ca05c79da",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"limit",
+										"233bbda6-a87a-4bbf-8fbd-d39ca05c79da"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 12:34:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "903"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Limit found\"\n    },\n    \"results\": {\n        \"id\": \"233bbda6-a87a-4bbf-8fbd-d39ca05c79da\",\n        \"limit_amount\": 18000000,\n        \"tenor\": 3,\n        \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n        \"Consumer\": {\n            \"ID\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"User_ID\": 5,\n            \"NIK\": \"1234567891123456\",\n            \"Full_Name\": \"jhon doe\",\n            \"Legal_Name\": \"jhon doe\",\n            \"Place_Of_Birth\": \"kuala tungkal\",\n            \"Date_Of_Birth\": \"01-01-2025\",\n            \"Salary\": 10000000,\n            \"Photo_KTP\": \"storages/images/8Bpibdx6lT_ktpbre.jpeg\",\n            \"Photo_Selfie\": \"storages/images/urDFgphxfw_selfie.jpeg\",\n            \"CreatedAt\": \"2025-04-20T15:35:36.294+07:00\",\n            \"UpdatedAt\": \"2025-04-20T15:35:36.294+07:00\"\n        },\n        \"remaining_amount\": 18000000,\n        \"CreatedAt\": \"2025-04-20T15:35:36.298+07:00\",\n        \"UpdatedAt\": \"2025-04-20T15:35:36.298+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Limit List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MjcxNDczLCJpZCI6NX0.-cF_cqtwzLP_13XWDCoKF0SmxDbpUCvcSRnYWiqdXBg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/limit/consumer/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"limit",
+								"consumer",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Limit List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/v1/limit/consumer/5",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"limit",
+										"consumer",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 19:19:30 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Limit found\"\n    },\n    \"results\": [\n        {\n            \"limit_id\": \"173590a3-f8a4-4f9d-927e-288b85590a63\",\n            \"limit_amount\": 18000000,\n            \"tenor\": 3,\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"remaining_amount\": 7000000,\n            \"created_at\": \"2025-04-20 15:35:36\",\n            \"updated_at\": \"2025-04-20 15:35:36\"\n        },\n        {\n            \"limit_id\": \"233bbda6-a87a-4bbf-8fbd-d39ca05c79da\",\n            \"limit_amount\": 18000000,\n            \"tenor\": 3,\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"remaining_amount\": 18000000,\n            \"created_at\": \"2025-04-20 15:35:36\",\n            \"updated_at\": \"2025-04-20 15:35:36\"\n        },\n        {\n            \"limit_id\": \"3254c86a-a12c-4008-bc59-cdbaa13fa809\",\n            \"limit_amount\": 8000000,\n            \"tenor\": 1,\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"remaining_amount\": 8000000,\n            \"created_at\": \"2025-04-20 15:35:36\",\n            \"updated_at\": \"2025-04-20 15:35:36\"\n        },\n        {\n            \"limit_id\": \"3c77fb08-79a1-45af-b51c-d595a280a7a6\",\n            \"limit_amount\": 18000000,\n            \"tenor\": 3,\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"remaining_amount\": 7000000,\n            \"created_at\": \"2025-04-20 15:35:36\",\n            \"updated_at\": \"2025-04-20 15:35:36\"\n        },\n        {\n            \"limit_id\": \"3d385e97-6496-439f-bc60-22d5951187f5\",\n            \"limit_amount\": 18000000,\n            \"tenor\": 3,\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"remaining_amount\": 7000000,\n            \"created_at\": \"2025-04-20 15:35:36\",\n            \"updated_at\": \"2025-04-20 15:35:36\"\n        },\n        {\n            \"limit_id\": \"9c0f9e6e-77da-4a98-8d27-f643f6ad8bfd\",\n            \"limit_amount\": 14000000,\n            \"tenor\": 2,\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"remaining_amount\": 14000000,\n            \"created_at\": \"2025-04-20 15:35:36\",\n            \"updated_at\": \"2025-04-20 15:35:36\"\n        },\n        {\n            \"limit_id\": \"dc20d0a9-dc9c-4894-ac8f-1888d27ac8a8\",\n            \"limit_amount\": 24000000,\n            \"tenor\": 6,\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"remaining_amount\": 24000000,\n            \"created_at\": \"2025-04-20 15:35:36\",\n            \"updated_at\": \"2025-04-20 15:35:36\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzQ0OTQwLCJpZCI6NX0.LNnhqJmLFcd8BbC2Y7VgdzsUbrsWXK4VCN_38MjqxuI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "limit_id",
+									"value": "3254c86a-a12c-4008-bc59-cdbaa13fa809",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "asset_name",
+									"value": "Hp Android Samsung",
+									"type": "text"
+								},
+								{
+									"key": "otr",
+									"value": "5000000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Create Transaction",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "limit_id",
+											"value": "3254c86a-a12c-4008-bc59-cdbaa13fa809",
+											"type": "text"
+										},
+										{
+											"key": "product_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "asset_name",
+											"value": "Hp Android Samsung",
+											"type": "text"
+										},
+										{
+											"key": "otr",
+											"value": "5000000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/api/v1/transaction",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"transaction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 02:11:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "724"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Transaction created successfully\"\n    },\n    \"results\": {\n        \"id\": \"43f9eb4a-62d3-4e2d-b457-325fff8e0ac1\",\n        \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n        \"contract_number\": \"TRX20250422091139\",\n        \"otr\": 5000000,\n        \"admin_fee\": 5000,\n        \"installment_amount\": 5046666.666666667,\n        \"interest_amount\": 41666.666666666664,\n        \"asset_name\": \"Hp Android Samsung\",\n        \"transaction_date\": \"2025-04-22 09:11:39\",\n        \"status\": \"unpaid\",\n        \"amount_used\": 5046666.666666667,\n        \"limit_id\": \"3254c86a-a12c-4008-bc59-cdbaa13fa809\",\n        \"limit_tenor\": 1,\n        \"product_id\": 3,\n        \"created_at\": \"2025-04-22 09:11:39\",\n        \"updated_at\": \"2025-04-22 09:11:39\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transaction List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzQ0OTQwLCJpZCI6NX0.LNnhqJmLFcd8BbC2Y7VgdzsUbrsWXK4VCN_38MjqxuI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/transaction/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Transaction List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/v1/transaction/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"transaction",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 02:12:07 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1425"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Transactions retrieved successfully\"\n    },\n    \"results\": [\n        {\n            \"id\": \"3a1df4f4-3edd-46cd-a04c-686c2d07efec\",\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"contract_number\": \"TRX20250422062143\",\n            \"otr\": 11000000,\n            \"admin_fee\": 5000,\n            \"installment_amount\": 5594166.666666667,\n            \"interest_amount\": 183333.33333333334,\n            \"asset_name\": \"hp iphone 16\",\n            \"transaction_date\": \"2025-04-22 06:21:43\",\n            \"status\": \"unpaid\",\n            \"amount_used\": 11188333.333333334,\n            \"limit_id\": \"9c0f9e6e-77da-4a98-8d27-f643f6ad8bfd\",\n            \"limit_tenor\": 0,\n            \"product_id\": 3,\n            \"created_at\": \"2025-04-22 06:21:43\",\n            \"updated_at\": \"2025-04-22 06:21:43\"\n        },\n        {\n            \"id\": \"43f9eb4a-62d3-4e2d-b457-325fff8e0ac1\",\n            \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n            \"contract_number\": \"TRX20250422091139\",\n            \"otr\": 5000000,\n            \"admin_fee\": 5000,\n            \"installment_amount\": 5046666.666666667,\n            \"interest_amount\": 41666.666666666664,\n            \"asset_name\": \"Hp Android Samsung\",\n            \"transaction_date\": \"2025-04-22 09:11:39\",\n            \"status\": \"unpaid\",\n            \"amount_used\": 5046666.666666667,\n            \"limit_id\": \"3254c86a-a12c-4008-bc59-cdbaa13fa809\",\n            \"limit_tenor\": 0,\n            \"product_id\": 3,\n            \"created_at\": \"2025-04-22 09:11:39\",\n            \"updated_at\": \"2025-04-22 09:11:39\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transaction Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzQ0OTQwLCJpZCI6NX0.LNnhqJmLFcd8BbC2Y7VgdzsUbrsWXK4VCN_38MjqxuI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/transaction/3a1df4f4-3edd-46cd-a04c-686c2d07efec",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"3a1df4f4-3edd-46cd-a04c-686c2d07efec"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Transaction Detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/v1/transaction/3a1df4f4-3edd-46cd-a04c-686c2d07efec",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"transaction",
+										"3a1df4f4-3edd-46cd-a04c-686c2d07efec"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 00:06:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "722"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Transaction retrieved successfully\"\n    },\n    \"results\": {\n        \"id\": \"3a1df4f4-3edd-46cd-a04c-686c2d07efec\",\n        \"consumer_id\": \"3ec372a0-7f8a-4939-bf69-3d36fa8f7fe9\",\n        \"contract_number\": \"TRX20250422062143\",\n        \"otr\": 11000000,\n        \"admin_fee\": 5000,\n        \"installment_amount\": 5594166.666666667,\n        \"interest_amount\": 183333.33333333334,\n        \"asset_name\": \"hp iphone 16\",\n        \"transaction_date\": \"2025-04-22 06:21:43\",\n        \"status\": \"unpaid\",\n        \"amount_used\": 11188333.333333334,\n        \"limit_id\": \"9c0f9e6e-77da-4a98-8d27-f643f6ad8bfd\",\n        \"limit_tenor\": 2,\n        \"product_id\": 3,\n        \"created_at\": \"2025-04-22 06:21:43\",\n        \"updated_at\": \"2025-04-22 06:21:43\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Installment",
+			"item": [
+				{
+					"name": "Get Installment List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzQ0OTQwLCJpZCI6NX0.LNnhqJmLFcd8BbC2Y7VgdzsUbrsWXK4VCN_38MjqxuI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/installment/transactions/43f9eb4a-62d3-4e2d-b457-325fff8e0ac1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"installment",
+								"transactions",
+								"43f9eb4a-62d3-4e2d-b457-325fff8e0ac1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Installment List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/v1/installment/transactions/43f9eb4a-62d3-4e2d-b457-325fff8e0ac1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"installment",
+										"transactions",
+										"43f9eb4a-62d3-4e2d-b457-325fff8e0ac1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 02:12:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "477"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Success Get Installments\"\n    },\n    \"results\": [\n        {\n            \"installment_id\": \"eb297dee-2c8c-46ab-9f09-287afcd8358c\",\n            \"transaction_id\": \"43f9eb4a-62d3-4e2d-b457-325fff8e0ac1\",\n            \"installment_order\": 1,\n            \"payment_amount\": 5046666,\n            \"due_date\": \"2025-05-22\",\n            \"payment_date\": null,\n            \"status\": \"unpaid\",\n            \"created_at\": \"0001-01-01 00:00:00\",\n            \"updated_at\": \"0001-01-01 00:00:00\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Installment Near Due Date",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzQ0OTQwLCJpZCI6NX0.LNnhqJmLFcd8BbC2Y7VgdzsUbrsWXK4VCN_38MjqxuI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/installment/transactions/near-due-date/3a1df4f4-3edd-46cd-a04c-686c2d07efec",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"installment",
+								"transactions",
+								"near-due-date",
+								"3a1df4f4-3edd-46cd-a04c-686c2d07efec"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SuccessGet Installment Near Due Date",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/v1/installment/transactions/near-due-date/3a1df4f4-3edd-46cd-a04c-686c2d07efec",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"installment",
+										"transactions",
+										"near-due-date",
+										"3a1df4f4-3edd-46cd-a04c-686c2d07efec"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 01:39:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "866"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Success Get Installments Near Due Date\"\n    },\n    \"results\": [\n        {\n            \"installment_id\": \"05b3afe9-b99f-43a6-a200-ac5c133d6e83\",\n            \"transaction_id\": \"3a1df4f4-3edd-46cd-a04c-686c2d07efec\",\n            \"installment_order\": 1,\n            \"payment_amount\": 5594166,\n            \"due_date\": \"2025-04-22\",\n            \"payment_date\": null,\n            \"status\": \"unpaid\",\n            \"created_at\": \"0001-01-01 00:00:00\",\n            \"updated_at\": \"0001-01-01 00:00:00\"\n        },\n        {\n            \"installment_id\": \"417a95d5-0ba2-46bc-84b8-673325314a91\",\n            \"transaction_id\": \"3a1df4f4-3edd-46cd-a04c-686c2d07efec\",\n            \"installment_order\": 2,\n            \"payment_amount\": 5594166,\n            \"due_date\": \"2025-04-23\",\n            \"payment_date\": null,\n            \"status\": \"unpaid\",\n            \"created_at\": \"0001-01-01 00:00:00\",\n            \"updated_at\": \"0001-01-01 00:00:00\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Installment Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzQ0OTQwLCJpZCI6NX0.LNnhqJmLFcd8BbC2Y7VgdzsUbrsWXK4VCN_38MjqxuI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/installment/05b3afe9-b99f-43a6-a200-ac5c133d6e83",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"installment",
+								"05b3afe9-b99f-43a6-a200-ac5c133d6e83"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Installment Detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/v1/installment/05b3afe9-b99f-43a6-a200-ac5c133d6e83",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"installment",
+										"05b3afe9-b99f-43a6-a200-ac5c133d6e83"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 02:03:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "446"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Success Get Installment\"\n    },\n    \"results\": {\n        \"installment_id\": \"05b3afe9-b99f-43a6-a200-ac5c133d6e83\",\n        \"transaction_id\": \"3a1df4f4-3edd-46cd-a04c-686c2d07efec\",\n        \"installment_order\": 1,\n        \"payment_amount\": 5594166,\n        \"due_date\": \"2025-04-22\",\n        \"payment_date\": null,\n        \"status\": \"unpaid\",\n        \"created_at\": \"2025-04-22 06:21:43\",\n        \"updated_at\": \"2025-04-22 06:21:43\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Installment Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6ImlubmFrYWR5bGVleGRAZ21haWwuY29tIiwiZXhwIjoxNzQ1MzQ0OTQwLCJpZCI6NX0.LNnhqJmLFcd8BbC2Y7VgdzsUbrsWXK4VCN_38MjqxuI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "paid",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/installment/eb297dee-2c8c-46ab-9f09-287afcd8358c",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"installment",
+								"eb297dee-2c8c-46ab-9f09-287afcd8358c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Update To Paid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "paid",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/api/v1/installment/eb297dee-2c8c-46ab-9f09-287afcd8358c",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"installment",
+										"eb297dee-2c8c-46ab-9f09-287afcd8358c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Apr 2025 02:27:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "447"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"success\": true,\n        \"message\": \"Success Update Installment\"\n    },\n    \"results\": {\n        \"installment_id\": \"eb297dee-2c8c-46ab-9f09-287afcd8358c\",\n        \"transaction_id\": \"43f9eb4a-62d3-4e2d-b457-325fff8e0ac1\",\n        \"installment_order\": 1,\n        \"payment_amount\": 5046666,\n        \"due_date\": \"2025-05-22\",\n        \"payment_date\": null,\n        \"status\": \"paid\",\n        \"created_at\": \"2025-04-22 09:11:39\",\n        \"updated_at\": \"2025-04-22 09:27:01\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
