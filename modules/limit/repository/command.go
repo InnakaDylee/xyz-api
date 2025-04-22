@@ -40,7 +40,8 @@ func (r *LimitCommandRepository) UpdateLimit(limit domain.Limit) (domain.Limit, 
 	if transaction.Error != nil {
 		return domain.Limit{}, transaction.Error
 	}
-	limitRaw := domain.LimitDomainIntoEntity(limit)
+
+	limitRaw := domain.LimitDomainIntoEntityWithLimitID(limit)
 	if err := transaction.Save(&limitRaw).Error; err != nil {
 		transaction.Rollback()
 		return domain.Limit{}, err
@@ -51,9 +52,6 @@ func (r *LimitCommandRepository) UpdateLimit(limit domain.Limit) (domain.Limit, 
 	}
 
 	limitDomain := domain.LimitEntityIntoDomain(limitRaw)
-	if err := transaction.Commit().Error; err != nil {
-		return domain.Limit{}, err
-	}
 
 	return limitDomain, nil
 }

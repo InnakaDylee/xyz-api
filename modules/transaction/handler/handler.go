@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"fmt"
+
 	"net/http"
 	"xyz/middlewares"
 	"xyz/modules/transaction/dto"
@@ -9,6 +9,7 @@ import (
 	"xyz/packages/responses"
 
 	consumerService "xyz/modules/consumer/service"
+	installmentService "xyz/modules/installment/service"
 
 	"github.com/labstack/echo/v4"
 )
@@ -18,13 +19,21 @@ type TransactionHandler struct {
 	transactionQueryService   service.TransactionQueryServiceInterface
 
 	consumerQueryService consumerService.ConsumerQueryServiceInterface
+
+	installmentCommandService installmentService.InstallmentCommandServiceInterface
 }
 
-func NewTransactionHandler(transactionCommandService service.TransactionCommandServiceInterface, transactionQueryService service.TransactionQueryServiceInterface, consumerQueryService consumerService.ConsumerQueryServiceInterface) *TransactionHandler {
+func NewTransactionHandler(
+	transactionCommandService service.TransactionCommandServiceInterface,
+	transactionQueryService service.TransactionQueryServiceInterface,
+	consumerQueryService consumerService.ConsumerQueryServiceInterface,
+	installmentCommandService installmentService.InstallmentCommandServiceInterface,
+) *TransactionHandler {
 	return &TransactionHandler{
 		transactionCommandService: transactionCommandService,
 		transactionQueryService:   transactionQueryService,
 		consumerQueryService:      consumerQueryService,
+		installmentCommandService:   installmentCommandService,
 	}
 }
 
@@ -43,19 +52,27 @@ func (h *TransactionHandler) CreateTransaction(ctx echo.Context) error {
 	if err != nil {
 		return ctx.JSON(http.StatusBadRequest, responses.ErrorResponse("Consumer not found"))
 	}
-	fmt.Println("masuk ga?")
 
 	transactionDomain := dto.TransactionRequestIntoDomain(transaction)
 	transactionDomain.ConsumerID = consumer.ID
 
-	fmt.Println("transaction domain")
 
 	transactionData, err := h.transactionCommandService.CreateTransaction(transactionDomain)
 	if err != nil {
 		return ctx.JSON(http.StatusInternalServerError, responses.ErrorResponse(err.Error()))
 	}
+	
+	transactionDomainData, err := h.transactionQueryService.GetTransactionByID(transactionData.ID)
+	if err != nil {
+		return ctx.JSON(http.StatusInternalServerError, responses.ErrorResponse(err.Error()))
+	}
 
-	transactionResponse := dto.TransactionDomainIntoResponse(transactionData)
+	err = h.installmentCommandService.CreateInstallment(transactionDomainData)
+	if err != nil {
+		return ctx.JSON(http.StatusInternalServerError, responses.ErrorResponse(err.Error()))
+	}
+
+	transactionResponse := dto.TransactionDomainIntoResponse(transactionDomainData)
 
 	return ctx.JSON(http.StatusOK, responses.SuccessResponse("Transaction created successfully", transactionResponse))
 }

@@ -18,7 +18,7 @@ func NewUserQueryRepository(db *gorm.DB) UserQueryRepositoryInterface {
 	}
 }
 
-func (r *userQueryRepository) GetUserByID(userID string) (domain.User, error) {
+func (r *userQueryRepository) GetUserByID(userID int) (domain.User, error) {
 	user := entity.User{}
 	if err := r.db.Where("id = ?", userID).First(&user).Error; err != nil {
 		return domain.User{}, err

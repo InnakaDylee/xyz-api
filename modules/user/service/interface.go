@@ -12,5 +12,5 @@ type UserCommandServiceInterface interface {
 }
 
 type UserQueryServiceInterface interface {
-	GetUserByID(userID string) (domain.User, error)
+	GetUserByID(userID int) (domain.User, error)
 }

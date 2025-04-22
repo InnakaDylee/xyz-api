@@ -9,7 +9,7 @@ type UserCommandRepositoryInterface interface {
 }
 
 type UserQueryRepositoryInterface interface {
-	GetUserByID(userID string) (domain.User, error)
+	GetUserByID(userID int) (domain.User, error)
 	GetUserByUsername(username string) (domain.User, error)
 	GetUserByEmail(email string) (domain.User, error)
 }

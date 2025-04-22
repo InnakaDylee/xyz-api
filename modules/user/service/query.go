@@ -15,7 +15,7 @@ func NewUserQueryService(userQueryRepository repository.UserQueryRepositoryInter
 	}
 }
 
-func (u *UserQueryService) GetUserByID(userID string) (domain.User, error) {
+func (u *UserQueryService) GetUserByID(userID int) (domain.User, error) {
 	user, err := u.userQueryRepository.GetUserByID(userID)
 	if err != nil {
 		return domain.User{}, err
